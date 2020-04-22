@@ -1,0 +1,19 @@
+{
+  "name": "fretebras",
+  "version": "1.0.0",
+  "description": "Avaliação de Tester da FreteBras",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "open:cypress": "cypress open",
+    "cypress": "cypress run"
+  },
+  "author": "Gustavo Adolpho",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^4.4.0"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^1.4.0"
+  }
+}
