@@ -1,4 +1,4 @@
-describe('Page "Object" Pattern - D', () => {
+describe('Evaluation of automation tests', () => {
     before(() => {
         Cypress.on('uncaught:exception', () =>{return false});
         cy.visit('https://www.olx.com.br/');
