@@ -6,13 +6,16 @@ describe('Evaluation of automation tests', () => {
         cy.get(".submitBtn").click();
       })
       
-    it('display only five ads with name and amount', () => {
+    it.only('display only five ads with name and amount', () => {
         cy.removeAds();
         cy.removeItens();
         cy.get('.sc-1fcmfeb-2').getAttributes();
+        cy.get('.sc-1fcmfeb-2').should($visible => {
+            expect($visible).to.have.length(5)
+        })
     });
 
-    it.only('print first ads', () => {
+    it('print first ads', () => {
         cy.get(":nth-child(2) > .sc-1m4ygug-3").click()
         cy.removeAds();
         cy.get(":nth-child(1) > .fnmrjs-0").screenshot()

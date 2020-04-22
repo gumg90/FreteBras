@@ -61,7 +61,9 @@ Cypress.Commands.add(
     (subject) => {
       cy.get(subject).each(($element, index) => {
           if(index > 4)
-          cy.get($element).invoke('attr', 'style', 'display: none')
+          cy.get($element).then(() => {
+            Cypress.$($element).remove()
+        })
       });
     }
   );
