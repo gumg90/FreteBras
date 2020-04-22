@@ -10,7 +10,6 @@ describe('Evaluation of automation tests', () => {
         Cypress.on('uncaught:exception', () =>{return false});
         cy.visit(pageElements.url)
         searchItem.searchItem()
-      })
       
     it('display only five ads with name and amount', () => {
         mainPage.displayOnlyFiveItens()
