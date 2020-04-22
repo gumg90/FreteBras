@@ -46,10 +46,14 @@ Cypress.Commands.add(
 
     Cypress.Commands.add(
         'removeItens', () =>{
-            cy.get(".fnmrjs-0 > .fnmrjs-1 > .fnmrjs-2").invoke('attr', 'style', 'display: none')
-            cy.get(".fnmrjs-0 > .fnmrjs-1 > .fnmrjs-7 > .fnmrjs-9 > .fnmrjs-18").invoke('attr', 'style', 'display: none')
-            cy.get(".fnmrjs-0 > .fnmrjs-1 > .fnmrjs-7 > .fnmrjs-20").invoke('attr', 'style', 'display: none')
-            cy.get(".fnmrjs-0 > .fnmrjs-1 > .fnmrjs-7 > .fnmrjs-9 > .fnmrjs-8 > div").invoke('attr', 'style', 'display: none')
+            cy.get(".fnmrjs-2").invoke('attr', 'style', 'display: none')
+            cy.get(".fnmrjs-9 > .fnmrjs-18").invoke('attr', 'style', 'display: none')
+            cy.get(".fnmrjs-20").invoke('attr', 'style', 'display: none')
+            cy.get(".fnmrjs-8 > div").invoke('attr', 'style', 'display: none')
+            if(Cypress.$(".jm5s8b-0").is(":visible")){
+                cy.get(".jm5s8b-0").invoke('attr', 'style', 'display: none')
+            }
+
 
         });
 

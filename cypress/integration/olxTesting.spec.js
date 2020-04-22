@@ -2,7 +2,7 @@ describe('Evaluation of automation tests', () => {
     before(() => {
         Cypress.on('uncaught:exception', () =>{return false});
         cy.visit('https://www.olx.com.br/');
-        cy.get("#q").type("computador");
+        cy.get("#q").type("carros");
         cy.get(".submitBtn").click();
       })
       
