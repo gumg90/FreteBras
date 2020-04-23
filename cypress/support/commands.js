@@ -1,59 +1,39 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+import * as pageElements from "./locator/pageElements"
+
 
 Cypress.Commands.add(
     'removeAds',
     () => {
-        cy.get('.yap-gemini-pub-item').then(() => {
-            Cypress.$(".yap-gemini-pub-item").parent().remove()
+
+        cy.get(pageElements.adsGoogle).then(() => {
+            Cypress.$(pageElements.adsGoogle).parent().remove()
         })
-        cy.get("[id^=listing-native-list-item]").then(() => {
-            Cypress.$("[id^=listing-native-list-item]").parent().remove()
+        cy.get(pageElements.adsPublicity).then(() => {
+            Cypress.$(pageElements.adsPublicity).parent().remove()
         })
-        cy.get("#adsense-slot").then(() => {
-            Cypress.$("#adsense-slot").remove()
+        cy.get(pageElements.gallery).then(() => {
+            Cypress.$(pageElements.gallery).remove()
         })
-        cy.get("#module-olx-shopping").then(() => {
-            Cypress.$("#module-olx-shopping").parent().remove()
+        cy.get(pageElements.adsGoogleBotton).then(() => {
+            Cypress.$(pageElements.adsGoogleBotton).parent().remove()
         })
-        cy.get("#listing-gallery-ads").then(() => {
-            Cypress.$("#listing-gallery-ads").remove()
+        cy.get(pageElements.adsLinks).then(() => {
+            Cypress.$(pageElements.adsLinks).remove()
         })
+
     }
 );
 
 Cypress.Commands.add(
     'removeElementIten', () =>{
-        cy.get(".fnmrjs-2").invoke('attr', 'style', 'display: none')
-        cy.get(".fnmrjs-9 > .fnmrjs-18").invoke('attr', 'style', 'display: none')
-        cy.get(".fnmrjs-20").invoke('attr', 'style', 'display: none')
-        cy.get(".fnmrjs-8 > div").invoke('attr', 'style', 'display: none')
-        if(Cypress.$(".jm5s8b-0").is(":visible")){
-            cy.get(".jm5s8b-0").invoke('attr', 'style', 'display: none')
+        cy.get(pageElements.image).invoke('attr', 'style', 'display: none')
+        cy.get(pageElements.location).invoke('attr', 'style', 'display: none')
+        cy.get(pageElements.times).invoke('attr', 'style', 'display: none')
+        cy.get(pageElements.advertiser).invoke('attr', 'style', 'display: none')
+        if(Cypress.$(pageElements.description).is(":visible")){
+            cy.get(pageElements.description).invoke('attr', 'style', 'display: none')
         }
+
     }
 );
 
