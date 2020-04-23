@@ -7,6 +7,7 @@ describe('Evaluation of automation tests', () => {
         cy.visit("https://www.olx.com.br/")
         searchItem.searchItem()
     })
+
     it('display only five ads with name and values', () => {
         mainPage.displayOnlyFiveItens()
     })
