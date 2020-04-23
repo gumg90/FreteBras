@@ -1,4 +1,3 @@
-export const url = "https://www.olx.com.br/" 
 export const searchBar = "#q"
 export const searchedItem = "computador"
 export const btnSearch = ".submitBtn"
