@@ -46,7 +46,7 @@ Cypress.Commands.add(
 );
 
 Cypress.Commands.add(
-    'removeItens', () =>{
+    'removeElementIten', () =>{
         cy.get(".fnmrjs-2").invoke('attr', 'style', 'display: none')
         cy.get(".fnmrjs-9 > .fnmrjs-18").invoke('attr', 'style', 'display: none')
         cy.get(".fnmrjs-20").invoke('attr', 'style', 'display: none')
@@ -58,7 +58,7 @@ Cypress.Commands.add(
 );
 
 Cypress.Commands.add(
-    'getAttributes',
+    'removeItens',
     {
       prevSubject: true,
     },

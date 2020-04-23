@@ -4,5 +4,7 @@ import * as pageElements from "../locator/pageElements"
 
 export function printItemPage(){
     pageTwo.navigatePageTwo()
-    cy.get(pageElements.firstItem).screenshot()
+    if(Cypress.$(pageElements.firstItem).is(":visible")){
+        cy.get(pageElements.firstItem).screenshot()
+    }
 }
